@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Logging</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .time-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: purple;
+        }
+        .input-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: purple;
+        }
+        .input-section input {
+            width: 200px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid purple;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            width: 150px;
+            padding: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+        }
+        button:hover {
+            background-color: #6a0dad;
+        }
+    </style>
+</head>
+<body>
+    <div class="time-display" id="time">08:15 AM</div>
+    <div class="input-section">
+        <label for="employee-id">กรอกรหัสพนักงาน</label>
+        <input type="text" id="employee-id" placeholder="รหัสพนักงาน">
+    </div>
+    <div class="buttons">
+        <button onclick="logTime()">ลงเวลา</button>
+        <button onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function logTime() {
+            const employeeId = document.getElementById('employee-id').value;
+            if (employeeId) {
+                alert(`ลงเวลาสำเร็จสำหรับรหัสพนักงาน: ${employeeId}`);
+            } else {
+                alert('กรุณากรอกรหัสพนักงาน');
+            }
+        }
+
+        function goBack() {
+            alert('ย้อนกลับไปหน้าก่อนหน้า');
+        }
+    </script>
+</body>
+</html>
